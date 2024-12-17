@@ -1,21 +1,7 @@
-# create a new repository on the command line
-echo "# MKI" >> README.md
+# MKI
 
-git init
+Description of your project goes here.
 
-git add README.md
+## Getting Started
 
-git commit -m "first commit"
-
-git branch -M main
-
-git remote add origin https://github.com/Nshetty1989/MKI.git
-
-git push -u origin main
-# …or push an existing repository from the command line
-
-git remote add origin https://github.com/Nshetty1989/MKI.git
-
-git branch -M main
-
-git push -u origin main
+Instructions for setting up and running your project go here.
