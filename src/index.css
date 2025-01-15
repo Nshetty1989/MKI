@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 36% 17%;
+    --foreground: 0 0% 100%;
+
+    --card: 230 36% 17%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 230 36% 17%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 213 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 184 88% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 100% 65%;
+
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 230 36% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 36% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 36% 17%;
+
+    --primary: 213 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 184 88% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 230 36% 17%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-kingdom-dark/30 backdrop-blur-lg border border-kingdom-primary/20 shadow-lg;
+  }
+
+  .glow-effect {
+    @apply relative after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_15px_rgba(78,159,255,0.3)] after:opacity-0 hover:after:opacity-100 after:transition-opacity;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-kingdom-primary to-kingdom-secondary bg-clip-text text-transparent;
+  }
+
+  .futuristic-input {
+    @apply bg-kingdom-dark/50 border border-kingdom-primary/20 rounded-lg px-4 py-2 text-kingdom-text placeholder:text-kingdom-muted/50 focus:border-kingdom-primary/50 focus:ring-1 focus:ring-kingdom-primary/50 transition-all;
+  }
+
+  .futuristic-button {
+    @apply bg-gradient-primary text-white rounded-lg px-6 py-2 font-medium shadow-lg hover:shadow-kingdom-primary/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .futuristic-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-kingdom-dark to-kingdom-dark/90 border border-kingdom-primary/20 shadow-xl;
+  }
+
+  .futuristic-card::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-kingdom-primary/10 to-kingdom-secondary/10 opacity-0 transition-opacity duration-300;
+  }
+
+  .futuristic-card:hover::before {
+    @apply opacity-100;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+}
